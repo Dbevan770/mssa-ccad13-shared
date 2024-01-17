@@ -1,5 +1,3 @@
-using System;
-
 public class CourseDerived : CourseBase
 {
     // Private properties
