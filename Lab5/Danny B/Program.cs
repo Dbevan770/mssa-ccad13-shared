@@ -29,19 +29,38 @@
                 newCourse.courseName = Console.ReadLine();
 
                 Console.WriteLine("Enter the credit hours for this course");
-                var success = int.TryParse(Console.ReadLine(), out int credits);
-                if (success)
+
+                try
                 {
-                    newCourse.creditHours = credits;
+                    if (int.TryParse(Console.ReadLine(), out int credits))
+                    {
+                        newCourse.creditHours = credits;
+                    }
+                    else
+                    {
+                        throw new Exception("Invalid input, please enter a number");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
                 }
 
-                Console.WriteLine("Enter your grade points for this course");
-                success = int.TryParse(Console.ReadLine(), out int points);
-                if (success)
-                {
-                    newCourse.gradePoints = points;
-                }
-                courseList[counter] = newCourse;
+
+
+                // var success = int.TryParse(Console.ReadLine(), out int credits);
+                // if (success)
+                // {
+                //     newCourse.creditHours = credits;
+                // }
+
+                // Console.WriteLine("Enter your grade points for this course");
+                // success = int.TryParse(Console.ReadLine(), out int points);
+                // if (success)
+                // {
+                //     newCourse.gradePoints = points;
+                // }
+                // courseList[counter] = newCourse;
             }
 
             return courseList;

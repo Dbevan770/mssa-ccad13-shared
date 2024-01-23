@@ -1,51 +1,31 @@
-﻿using System;
-Console.WriteLine("04 -> Algorithms and Data Structures");
+﻿Console.WriteLine("04 -> Algorithms and Data Structures");
 
-// #TODO: Task 1.2 Create an array here called gradesArray
 float[] gradesArray = new float[5];
 
-
-// #TODO: Task 1.3 Call the addGrades method, passing it the gradesArray
 addGrades(gradesArray);
 
-// #TODO: Task 1.4 After adding grades to the array, call the displayGrades method
-// to print out the grades to the console window
-// Use the foreach construct to iterate over the array
 displayGrades(gradesArray);
 
-// #TODO: Task 2.1 Create a new Stack object called myStack
 Stack<float> myStack = new Stack<float>();
 
-
-// #TODO: Task 2.2 Call the pushStack() method passing in the grades array for values
 pushStack(gradesArray, myStack);
 
-// #TODO: Task 2.3 Call the peekStack() method passing in the grades array for values
 peekStack(myStack);
 
-// #TODO: Task 2.4 Call the popStack() method twice to remove the top two items from stack
-// The popStack method will display each popped item to the console window
 popStack(myStack);
 popStack(myStack);
 
-// #TODO: Task 3.1 Create a new SortedList object called myCourses
 SortedList<string, string> myCourses = new SortedList<string, string>();
 
-
-
-// #TODO: Task 3.2 Call the populateList() method
 populateList(myCourses);
 
-
-
-// #TODO: Task 3.4 Remove an item from the myCourses list using the key
 removeListItem(myCourses, "CS102");
 
 
 static void addGrades(float[] grdArray)
 {
     Random rnd = new Random();
-    for(int i = 0; i < grdArray.Length; i++)
+    for (int i = 0; i < grdArray.Length; i++)
     {
         int random = rnd.Next(0, 100);
         float.TryParse(random.ToString(), out float result);
